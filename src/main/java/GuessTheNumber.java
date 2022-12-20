@@ -31,7 +31,13 @@ public class GuessTheNumber {
 
                     if (check.isAlive(lives)) {
                         lives--;
-                        System.out.printf("Wrong answer. Lives = %d", lives);
+
+                        if (userInp < guessNo) {
+                            System.out.printf("Too low. Lives = %d", lives);
+                        } else if (userInp > guessNo) {
+                            System.out.printf("Too high. Lives = %d", lives);
+                        }
+
                     } else {
                         System.out.println("You lost.\n");
                         break;
